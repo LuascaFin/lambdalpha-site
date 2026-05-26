@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lambda Alpha — Luca Ascani</title>
+  <meta name="description" content="Lambda Alpha — Luca Ascani. Angel investor backing the next generation of founders across Europe in fintech, SaaS, DTC and the future of work." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lambda Alpha — Luca Ascani" />
+  <meta property="og:description" content="Angel investor backing the next generation of founders." />
+  <meta property="og:url" content="https://lambdalpha.com/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">&lambda;</span>
+      <span class="brand-name">Lambda Alpha</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#funds">Funds</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <p class="eyebrow">Angel investor · Europe</p>
+      <h1>Backing the next generation of founders.</h1>
+      <p class="lede">
+        I'm Luca Ascani. After almost twenty years building and scaling internet
+        companies, I invest — early and hands-on — in a small number of teams
+        with the ambition and the market to become category leaders.
+      </p>
+    </section>
+
+    <section id="about" class="block">
+      <h2 class="kicker">About</h2>
+      <div class="prose">
+        <p>
+          I started out in Rome at twenty, launching <strong>BuyCentral</strong>, Italy's
+          first shopping comparison site (sold to Lycos), and <strong>ADVance</strong>,
+          which became the country's leading digital agency (sold to NetBooster). In 2004 I
+          co-founded <strong>GoAdv / Populis</strong>, one of Europe's largest digital
+          publishing groups, listed on the Paris Alternext exchange in 2007.
+        </p>
+        <p>
+          I brought the <strong>TechCrunch</strong> conference to Italy and co-hosted
+          <strong>Founders Forum</strong> in Rome, and co-founded <strong>TAG DCU</strong>
+          in Dublin, a startup campus inside the university. Today I invest as an angel and
+          back funds as an LP, with a portfolio that includes Scalapay, Lendable, Emma,
+          Bear and Gideon Brothers.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach" class="block">
+      <h2 class="kicker">Approach</h2>
+      <div class="approach-grid">
+        <div class="approach-item">
+          <h3>People over ideas</h3>
+          <p>I back the founder, not the pitch. Focus and execution matter more than the deck.</p>
+        </div>
+        <div class="approach-item">
+          <h3>More than capital</h3>
+          <p>My background is AdTech and media: go-to-market, distribution, UX, growth and fundraising.</p>
+        </div>
+        <div class="approach-item">
+          <h3>A clear equity story</h3>
+          <p>I invest alongside a VC lead. A great lead on day one means a faster company.</p>
+        </div>
+        <div class="approach-item">
+          <h3>Two or three a year</h3>
+          <p>Few, deep relationships. Mainly Europe — Ireland, France, the UK — and global markets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="block">
+      <h2 class="kicker">Portfolio</h2>
+      <p class="section-note">Companies I've invested in or advised at their earliest stage.</p>
+      <div class="logo-grid" id="portfolio-grid" aria-busy="true"></div>
+    </section>
+
+    <section id="funds" class="block">
+      <h2 class="kicker">Funds &amp; co-investors</h2>
+      <p class="section-note">Funds I back as an LP and partners I've co-invested with.</p>
+      <div class="logo-grid logo-grid--muted" id="funds-grid" aria-busy="true"></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="kicker">Pitch me</h2>
+      <p class="contact-lede">
+        Building something with a market worth at least $1bn and a small, exceptional core team?
+        Share your deck.
+      </p>
+      <details class="pitch">
+        <summary>Send your deck</summary>
+        <form class="pitch-form" action="https://formspree.io/f/your-id" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="company">Company &amp; deck link</label>
+            <input id="company" name="company" type="text" placeholder="company.com / link to deck" required />
+          </div>
+          <div class="field">
+            <label for="message">A few lines on what you're building</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Send</button>
+          <p class="form-fallback">Or email <a href="mailto:luca@lambdalpha.com">luca@lambdalpha.com</a>.</p>
+        </form>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-brand">&lambda; Lambda Alpha</span>
+    <span class="footer-meta">&copy; <span id="year"></span> Luca Ascani</span>
+  </footer>
+
+  <script src="data/data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
