@@ -64,8 +64,8 @@
   }
 
   render(data.portfolio, "portfolio-grid", true);
-  render(data.lpFunds, "lp-funds-grid");
-  render(data.coinvestors, "funds-grid");
+  render(data.lpFunds, "lp-funds-grid", true);
+  render(data.coinvestors, "funds-grid", true);
 
   // ---- Edit mode: drag & drop reordering (open with ?edit=1) ----
   if (new URLSearchParams(location.search).get("edit") === "1" && window.Sortable) {
