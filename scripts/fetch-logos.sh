@@ -20,8 +20,9 @@ command -v curl >/dev/null || { echo "Serve curl"; exit 1; }
 # Estrae righe "logo<TAB>url_effettivo" da data/data.js usando Node.
 node -e '
   const d = require("./data/data.js");
+  // manualLogo: true  -> file fornito a mano, non scaricare/sovrascrivere
   const all = [...(d.portfolio||[]), ...(d.lpFunds||[]), ...(d.coinvestors||[])]
-    .filter(x => !x.hidden && x.logo);
+    .filter(x => !x.hidden && x.logo && !x.manualLogo);
   for (const x of all) {
     let url = x.src;
     const isClearbit = url && url.includes("clearbit");
