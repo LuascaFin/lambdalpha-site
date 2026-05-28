@@ -7,9 +7,9 @@
 
   var data = (window.LAMBDA || { portfolio: [], lpFunds: [], coinvestors: [] });
 
-  function cell(item) {
+  function cell(item, withCaption) {
     var a = document.createElement("a");
-    a.className = "logo-cell";
+    a.className = "logo-cell" + (withCaption ? " logo-cell--with-caption" : "");
     a.href = item.url || "#";
     a.target = "_blank";
     a.rel = "noopener noreferrer";
@@ -20,15 +20,28 @@
     img.alt = item.name;
     img.loading = "lazy";
 
-    // If the logo file is missing, show the company name instead.
+    // If the logo file is missing:
+    //  - withCaption=true  → remove the img; the caption below already shows the name.
+    //  - withCaption=false → replace the img with the company name as text fallback.
     img.onerror = function () {
-      var span = document.createElement("span");
-      span.className = "logo-fallback";
-      span.textContent = item.name;
-      a.replaceChild(span, img);
+      if (withCaption) {
+        if (img.parentNode) img.parentNode.removeChild(img);
+      } else {
+        var span = document.createElement("span");
+        span.className = "logo-fallback";
+        span.textContent = item.name;
+        a.replaceChild(span, img);
+      }
     };
 
     a.appendChild(img);
+
+    if (withCaption) {
+      var cap = document.createElement("span");
+      cap.className = "logo-caption";
+      cap.textContent = item.name;
+      a.appendChild(cap);
+    }
 
     if (item.sold) {
       var badge = document.createElement("span");
@@ -40,17 +53,17 @@
     return a;
   }
 
-  function render(items, mountId) {
+  function render(items, mountId, withCaption) {
     var mount = document.getElementById(mountId);
     if (!mount) return;
     mount.innerHTML = "";
     (items || [])
       .filter(function (it) { return !it.hidden; })
-      .forEach(function (it) { mount.appendChild(cell(it)); });
+      .forEach(function (it) { mount.appendChild(cell(it, withCaption)); });
     mount.setAttribute("aria-busy", "false");
   }
 
-  render(data.portfolio, "portfolio-grid");
+  render(data.portfolio, "portfolio-grid", true);
   render(data.lpFunds, "lp-funds-grid");
   render(data.coinvestors, "funds-grid");
 
